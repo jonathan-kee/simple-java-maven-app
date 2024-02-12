@@ -8,6 +8,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'whoami'
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh 'mvn -B -DskipTests clean package'
             }
         }
